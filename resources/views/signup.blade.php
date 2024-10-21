@@ -41,10 +41,10 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav ml-auto p-4">
-                    <a href="/" class="nav-item nav-link active">Home</a>
-                    <a href="#about" class="nav-item nav-link">About</a>
+                    <a href="/" class="nav-item nav-link ">Home</a>
+                    <a href="/#about" class="nav-item nav-link">About</a>
                     <a href="menu.html" class="nav-item nav-link">Menu</a>
-                    <a href="/signup" class="nav-item nav-link">Signup</a>
+                    <a href="/signup" class="nav-item nav-link active">Signup</a>
                     <a style="cursor: pointer" class="nav-item nav-link" data-target="#loginAccountModal"
                         data-toggle="modal">Login</a>
                 </div>
@@ -53,70 +53,109 @@
     </div>
     <!-- Navbar End -->
 
-    <!-- Carousel Start -->
-    <div class="container-fluid p-0 mb-5">
-        <div id="blog-carousel" class="carousel slide overlay-bottom" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="w-100" src="img/carousel-1.jpg" alt="Image">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <h2 class="text-primary font-weight-medium m-0">We Have Been Serving</h2>
-                        <h1 class="display-1 text-white m-0">COFFEE</h1>
-                        <h2 class="text-white m-0">* SINCE 1950 *</h2>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="w-100" src="img/carousel-2.jpg" alt="Image">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <h2 class="text-primary font-weight-medium m-0">We Have Been Serving</h2>
-                        <h1 class="display-1 text-white m-0">COFFEE</h1>
-                        <h2 class="text-white m-0">* SINCE 1950 *</h2>
-                    </div>
-                </div>
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header mb-5 position-relative overlay-bottom">
+        <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5"
+            style="min-height: 400px">
+            <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">Signup</h1>
+            <div class="d-inline-flex mb-lg-5">
+                <p class="m-0 text-white"><a class="text-white" href="/">Home</a></p>
+                <p class="m-0 text-white px-2">/</p>
+                <p class="m-0 text-white">Signup</p>
             </div>
-            <a class="carousel-control-prev" href="#blog-carousel" data-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </a>
-            <a class="carousel-control-next" href="#blog-carousel" data-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </a>
         </div>
     </div>
-    <!-- Carousel End -->
+    <!-- Page Header End -->
 
 
-    <!-- About Start -->
-    <div class="container-xxl py-5" id="about">
+    <!-- Contact Start -->
+    <div class="container-fluid pt-5">
         <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <img class="img-fluid" src="/img/about.jpg" alt="">
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="h-100">
-                        <h1 class="display-6">About Us</h1>
-                        <p class="text-primary fs-5 mb-4">Sip, Savour and Stay</p>
-                        <p style="text-align: justify; text-indent: 5%">Welcome to MyCoffee, where passion meets the
-                            perfect cup! Nestled in the heart of our community, we’re not just a coffee shop – we’re a
-                            gathering place, a haven for coffee enthusiasts, and a warm spot for conversations. At
-                            MyCoffee, we believe that every cup tells a story, and we’re dedicated to crafting the
-                            finest blends that elevate your day.
+            <div class="row">
+                <div class="col-lg-12">
+                    <form action="/" method="post">
+                        @csrf
+                        <div class="form-group mt-2">
+                            <label for="firstName" class="text-dark">First Name:</label>
+                            <br>
+                            <input required type="text" name="firstName" id="" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="middleName" class="text-dark">Middle Name:</label>
+                            <br>
+                            <input type="text" name="middleName" id="" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="lastName" class="text-dark">Last Name:</label>
+                            <br>
+                            <input required type="text" name="lastName" id="" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="address" class="text-dark">Address:</label>
+                            <br>
+                            <textarea required name="address" id="" cols="30" rows="5" class="form-control">
+        
+                            </textarea>
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="birthDate" class="text-dark">Birth Date:</label>
+                            <br>
+                            <input required type="date" name="birthDate" id="" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="gender" class="text-dark">Gender:</label>
+                            <br>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <input type="radio" name="gender" value="male"
+                                            aria-label="Radio button for selecting male">
+                                    </div>
+                                </div>
+                                <span class="text-dark" style="margin-left: 5px;">Male</span>
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <input type="radio" name="gender" value="female"
+                                            aria-label="Radio button for selecting female">
+                                    </div>
+                                </div>
+                                <span class="text-dark" style="margin-left: 5px;">Female</span>
+                            </div>
+                        </div>
 
-                            Our baristas are skilled artisans who handcraft each drink with love and expertise, ensuring
-                            every sip offers the ultimate coffee experience. Whether you’re here for a morning
-                            pick-me-up, a midday break, or a quiet evening, our cozy ambiance and premium brews promise
-                            to make every visit special.
-
-                            From ethically sourced beans to freshly baked pastries, we bring you the best in quality and
-                            taste. So come on in, relax, and let MyCoffee be your favorite escape – one cup at a time.
-                        </p>
-
-                    </div>
+                        <div class="form-group mt-2">
+                            <label for="phoneNumber" class="text-dark">Phone Number:</label>
+                            <br>
+                            <input required type="number" name="phoneNumber" id="" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="username" class="text-dark">Username:</label>
+                            <br>
+                            <input required type="text" name="username" id="" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="password" class="text-dark">Password:</label>
+                            <br>
+                            <input required type="password" name="password" id="password" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="confimpass" class="text-dark">Confirm Password:</label>
+                            <br>
+                            <input required type="password" name="confimpass" id="confimpass" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="checkbox" id="showPassword" onclick="togglePasswordVisibility()">
+                            <label for="showPassword" class="text-dark">Show Password</label>
+                        </div> <button type="submit" class="btn btn-primary" name="btnCreateAccount"
+                            value="yes">Proceed</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-    <!-- About End -->
+    <!-- Contact End -->
 
 
     <!-- Footer Start -->
@@ -237,6 +276,18 @@
         </div>
     </div>
     <script>
+        function togglePasswordVisibility() {
+            var passwordField = document.getElementById("password");
+            var confirmPasswordField = document.getElementById("confimpass");
+            if (passwordField.type === "password" && confirmPasswordField.type === "password") {
+                passwordField.type = "text";
+                confirmPasswordField.type = "text";
+            } else {
+                passwordField.type = "password";
+                confirmPasswordField.type = "password";
+            }
+        }
+
         function togglePasswordVisibility2() {
             var passwordField = document.getElementById("password2");
             if (passwordField.type === "password") {
